@@ -1,4 +1,4 @@
-# EUR-Currency-Converter
+#Currency-Converter
 
 This is a simple project to learn more how api's request works and how to pipe commands.
 

@@ -21,14 +21,15 @@ while run:
     table = PrettyTable()
     table.field_names = ["Amount", "Base currency","Currency chosen", "Total"]
 
-    currency = input("Type the currency (Ex: BRL, USD): ").upper()
+    base_currency = input("Type the base currency(Ex: BRL, USD): ").upper()
+    currency = input("Type the currency you want to convert(Ex: BRL, USD): ").upper()
     convert = float(input("Type the value to be converted: "))
 
     base = data["base"]
 
-    converted = round(convert * data["rates"][currency], 2)
+    converted = round(convert * (data["rates"][currency]/data["rates"][base_currency]), 2)
 
-    table.add_row([convert, base, currency, converted])
+    table.add_row([convert, base_currency, currency, converted])
 
     print(table)
     new_consult()
